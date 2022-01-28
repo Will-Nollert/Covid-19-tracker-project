@@ -41,10 +41,11 @@ function App() {
           </Select>
         </FormControl>
       </div>
-      <div className="app_stats"></div>
-      <InfoBox title="Coronavirus cases" cases={1234} total={2000} />
-      <InfoBox title="Recovered" cases={1234} total={3000} />
-      <InfoBox title="Deaths" cases={1234} total={1200} />
+      <div className="app_stats">
+        <InfoBox title="Coronavirus cases" cases={1234} total={2000} />
+        <InfoBox title="Recovered" cases={1234} total={3000} />
+        <InfoBox title="Deaths" cases={1234} total={1200} />
+      </div>
     </div>
   );
 }
