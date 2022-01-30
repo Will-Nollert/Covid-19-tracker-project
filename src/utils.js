@@ -1,22 +1,26 @@
 import { Circle, Popup } from "react-leaflet";
 import React from "react";
 import numeral from "numeral";
+import { green, orange, red } from "@material-ui/core/colors";
 
 const casesTypeColors = {
   cases: {
     hex: "#cc1034",
-    rgb: "rgb(204, 16, 52)",
+    rgb: "rgb(255, 0, 0)",
+    color: red,
     multiplier: 80,
   },
   recovered: {
     hex: "#6bd71d",
-    rgb: "rgb(125, 215, 29)",
+    rgb: "rgb(0, 128, 0)",
     multiplier: 120,
+    color: green,
   },
   deaths: {
     hex: "#fb4443",
-    rgb: "rgb(251, 68, 67)",
+    rgb: "rgb(0, 0, 255)",
     multiplier: 200,
+    color: orange,
   },
 };
 
@@ -67,6 +71,3 @@ export const showDataOnMap = (data, casesType = "cases") =>
       </Popup>
     </Circle>
   ));
-
-/*  }
- */

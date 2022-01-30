@@ -92,19 +92,24 @@ function App() {
         </div>
         <div className="app_stats">
           <InfoBox
-            onClick={(e) => setCasesType("cases") + console.log(casesType)}
+            isRed
+            active={casesType === "cases"}
+            onClick={(e) => setCasesType("cases")}
             title="Coronavirus cases"
             cases={prettyPrintStat(countryInfo.todayCases)}
             total={prettyPrintStat(countryInfo.cases)}
           />
           <InfoBox
-            onClick={(e) => setCasesType("recovered") + console.log(casesType)}
+            active={casesType === "recovered"}
+            onClick={(e) => setCasesType("recovered")}
             title="Recovered"
             cases={prettyPrintStat(countryInfo.todayRecovered)}
             total={prettyPrintStat(countryInfo.recovered)}
           />
           <InfoBox
-            onClick={(e) => setCasesType("deaths") + console.log(casesType)}
+            isRed
+            active={casesType === "deaths"}
+            onClick={(e) => setCasesType("deaths")}
             title="Deaths"
             cases={prettyPrintStat(countryInfo.todayDeaths)}
             total={prettyPrintStat(countryInfo.deaths)}
@@ -122,8 +127,8 @@ function App() {
         <CardContent>
           <h3>Live Cases by Country</h3>
           <Table countires={tableData} />
-          <h3>WorlWide new {casesType}</h3>
-          <LineGraph casesType={casesType} />
+          <h3>Worlwide {casesType}</h3>
+          <LineGraph className="app_graph" casesType={casesType} />
         </CardContent>
       </Card>
     </div>
