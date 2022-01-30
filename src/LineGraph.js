@@ -2,7 +2,36 @@ import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import numeral from "numeral";
 
-const options = {
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+/* So two issues in this file, first the options scale is confied wrong
+but the second thing is whenever I call SetData  on line 144 it breaks the app
+I think that maybe they docs im using are from the old version of charts 
+but I know that the data im getting back is being logged 
+
+
+I aslo dont know where  "catagory " comes form when I useState there 
+its not in the whole projecct and I cant get it from the docs*/
+/* const options = {
   legend: {
     display: false,
   },
@@ -45,10 +74,10 @@ const options = {
       },
     ],
   },
-};
+}; */
 
 //option2
-/* const options = {
+const options = {
   options: {
     scales: {
       x: {
@@ -73,6 +102,10 @@ const options = {
         },
       },
       y: {
+        ticks: {
+          min: 0,
+          stepSize: 1,
+        },
         display: true,
         title: {
           display: true,
@@ -81,7 +114,7 @@ const options = {
       },
     },
   },
-}; */
+};
 const buildChartData = (data, casesType = "cases") => {
   const chartData = [];
   let lastDataPoint;
@@ -110,7 +143,7 @@ function LineGraph({ casesType = "cases" }) {
         .then((data) => {
           let chartData = buildChartData(data, casesType);
           setData(chartData);
-          console.log(chartData);
+          //console.log(chartData);
         });
     };
     fetchData();
@@ -125,7 +158,7 @@ function LineGraph({ casesType = "cases" }) {
           data={{
             datasets: [
               {
-                label: "first data set",
+                label: "New Cases WorldWide",
                 backgroundColor: "rgba(204, 16, 52, 0.5)",
                 borderColor: "#CC1034",
                 data: data,
