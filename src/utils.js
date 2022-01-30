@@ -4,15 +4,18 @@ import numeral from "numeral";
 
 const casesTypeColors = {
   cases: {
-    hex: "#CC1034",
+    hex: "#cc1034",
+    rgb: "rgb(204, 16, 52)",
     multiplier: 80,
   },
-  recovred: {
-    hex: "#7dd71d",
+  recovered: {
+    hex: "#6bd71d",
+    rgb: "rgb(125, 215, 29)",
     multiplier: 120,
   },
   deaths: {
     hex: "#fb4443",
+    rgb: "rgb(251, 68, 67)",
     multiplier: 200,
   },
 };
@@ -33,14 +36,13 @@ export const sortData = (data) => {
 export const prettyPrintStat = (stat) =>
   stat ? `+${numeral(stat).format("0.0a")}` : "+0";
 
-//draw ciriclesa on the map with interactive tooltip
 export const showDataOnMap = (data, casesType = "cases") =>
   data.map((country) => (
     <Circle
-      center={[country.countryInfo.lat, country.countryInfo.long]}
-      fillOpacity={0.4}
       color={casesTypeColors[casesType].hex}
       fillColor={casesTypeColors[casesType].hex}
+      center={[country.countryInfo.lat, country.countryInfo.long]}
+      fillOpacity={0.4}
       radius={
         Math.sqrt(country[casesType]) * casesTypeColors[casesType].multiplier
       }
@@ -65,3 +67,6 @@ export const showDataOnMap = (data, casesType = "cases") =>
       </Popup>
     </Circle>
   ));
+
+/*  }
+ */
