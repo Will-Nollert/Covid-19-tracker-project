@@ -8,6 +8,11 @@ Built in January of 2022 this app is one of the first personal projects I built 
 
 ## Tech Stack
 Javascript, React, Express, ChartsJs, LeafletJS, GoogleMaps
+
+##Demo
+![CovidTrackingApp](https://user-images.githubusercontent.com/90637390/230632313-3afbf130-6835-426a-a1b3-917134536a7a.png)
+
+
 ## Run Locally
 
 Clone the project
