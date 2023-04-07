@@ -3,7 +3,7 @@
 
 Built in January of 2022 this app is one of the first personal projects I built outside of course curriculum during my FullStack Academy Bootcamp. I built this app to help familiarize myself integrating multiple API’s into different but linked React components. The crux of this project was using google maps API to manipulate the Map object and add layers of toggleable information to that map object.  
 
-
+Live URL: https://nollertcovid19tracker.netlify.app/
 
 
 ## Tech Stack
