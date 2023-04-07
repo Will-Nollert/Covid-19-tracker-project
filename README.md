@@ -12,7 +12,7 @@ Javascript, React, Express, ChartsJs, LeafletJS, GoogleMaps
 
 Clone the project
 ```bash
-  git clone https://github.com/Will-Nollert/ecommerce-site-socks-.git
+  git clone git@github.com:Will-Nollert/Covid-19-tracker-project.git
 ```
 Go to the project directory
 ```bash
